@@ -31,12 +31,12 @@ class MouseCustomCursor {
 	}
 
 	public function mcustomc_all_assets_for_the_public(){
-		wp_enqueue_style( 'mcustomc_customcursors_style_8cursor', plugin_dir_url( __FILE__ ) . 'assets/public/css/frontend.css', null, '1.0', 'all' );
-		wp_enqueue_script( 'mcustomc_customcursors_the_cursor', plugin_dir_url( __FILE__ ) . 'assets/public/js/mcustomc-custom-cursor.js', array('jquery'), '1.0', true );
+		wp_enqueue_style( 'mcustomc-customcursors-style-8cursor', plugin_dir_url( __FILE__ ) . 'assets/public/css/frontend.css', null, '1.0', 'all' );
+		wp_enqueue_script( 'mcustomc-customcursors-the-cursor', plugin_dir_url( __FILE__ ) . 'assets/public/js/mcustomc-custom-cursor.js', array('jquery'), '1.0', true );
 	}
 	public function mcustomc_all_assets_for_elementor_editor_admin(){
-		wp_enqueue_style( 'mcustomc_customcursors_style_8cursor_edit', plugin_dir_url( __FILE__ ) . 'assets/public/css/frontend.css', null, '1.0', 'all' );
-		wp_enqueue_script( 'mcustomc_customcursors_the_cursor_edit', plugin_dir_url( __FILE__ ) . 'assets/public/js/mcustomc-custom-cursor.js', array('jquery'), '1.0', true );
+		wp_enqueue_style( 'mcustomc-customcursors-style-8cursor-edit', plugin_dir_url( __FILE__ ) . 'assets/public/css/frontend.css', null, '1.0', 'all' );
+		wp_enqueue_script( 'mcustomc-customcursors-the-cursor-edit', plugin_dir_url( __FILE__ ) . 'assets/public/js/mcustomc-custom-cursor.js', array('jquery'), '1.0', true );
 	}
 
 	public function ferdaussk_try_tomake_cursore($section, $section_id){
