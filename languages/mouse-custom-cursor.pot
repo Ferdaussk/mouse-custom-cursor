@@ -1,0 +1,143 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Mouse Custom Cursor\n"
+"POT-Creation-Date: 2023-03-16 16:04+0600\n"
+"PO-Revision-Date: 2023-03-16 16:04+0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: mouse-custom-cursor.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: mcustomc_plugin_boots.php:48
+msgid "SK Mouse Custom Cursor"
+msgstr ""
+
+#: mcustomc_plugin_boots.php:57
+msgid "Custom Cursor"
+msgstr ""
+
+#: mcustomc_plugin_boots.php:60
+msgid "Yes"
+msgstr ""
+
+#: mcustomc_plugin_boots.php:61
+msgid "No"
+msgstr ""
+
+#: mcustomc_plugin_boots.php:71
+msgid "Apply On"
+msgstr ""
+
+#: mcustomc_plugin_boots.php:76
+msgid "Element Class/ID"
+msgstr ""
+
+#: mcustomc_plugin_boots.php:88
+msgid "CSS Selector"
+msgstr ""
+
+#: mcustomc_plugin_boots.php:101
+msgid "Cursor Type"
+msgstr ""
+
+#: mcustomc_plugin_boots.php:105
+msgid "Text Type"
+msgstr ""
+
+#: mcustomc_plugin_boots.php:106
+msgid "Image Type"
+msgstr ""
+
+#: mcustomc_plugin_boots.php:107
+msgid "Try Next"
+msgstr ""
+
+#: mcustomc_plugin_boots.php:119
+msgid "Choose Cursor Icon"
+msgstr ""
+
+#: mcustomc_plugin_boots.php:132 mcustomc_plugin_boots.php:144
+msgid "Cursor Text"
+msgstr ""
+
+#: mcustomc_plugin_boots.php:157
+msgid "Cursor Icon"
+msgstr ""
+
+#: mcustomc_plugin_boots.php:174
+msgid "Typography"
+msgstr ""
+
+#: mcustomc_plugin_boots.php:186
+msgid "Color"
+msgstr ""
+
+#: mcustomc_plugin_boots.php:203
+msgid "Background"
+msgstr ""
+
+#: mcustomc_plugin_boots.php:218
+msgid "Border"
+msgstr ""
+
+#: mcustomc_plugin_boots.php:232
+msgid "Border Radius"
+msgstr ""
+
+#: mcustomc_plugin_boots.php:248
+msgid "Padding"
+msgstr ""
+
+#: mouse-custom-cursor.php:64 mouse-custom-cursor.php:79
+#, php-format
+msgid "\"%1$s\" requires \"%2$s\" version %3$s or greater."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+#: mouse-custom-cursor.php:65 mouse-custom-cursor.php:80
+msgid "Mouse Custom Cursor"
+msgstr ""
+
+#: mouse-custom-cursor.php:66
+msgid "Elementor"
+msgstr ""
+
+#: mouse-custom-cursor.php:70 mouse-custom-cursor.php:85
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: mouse-custom-cursor.php:81
+msgid "PHP"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "www.bwdplugins.com/elementor/mouse-custom-cursor"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Mouse Custom Cursor is beautiful responsive customcursor with slider and "
+"powerfull customcursor submitter for blogs and sites."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Best WP Developer"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "www.bestwpdeveloper.com/"
+msgstr ""

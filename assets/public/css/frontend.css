@@ -1,0 +1,23 @@
+div[class*=" pa-"],
+div[class^="pa-"] {
+    box-sizing: border-box;
+}
+.mcustomc-cursor-pointer {
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 99;
+}
+.mcustomc-cursor-active .mcustomc-cursor-pointer {
+    opacity: 1;
+    visibility: visible;
+}
+.mcustomc-cursor-pointer-text {
+    background-color: #111;
+    color: #fff;
+    padding: 4px 10px;
+}
+/* Ferdaus sk from best wp developer */
+img.mcustomc-cursor-pointer{
+    height: 200px !important;
+}
