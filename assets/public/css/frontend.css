@@ -13,9 +13,10 @@ div[class^="pa-"] {
     visibility: visible;
 }
 .mcustomc-cursor-pointer-text {
-    background-color: #111;
+    background-color: #767676;
     color: #fff;
     padding: 4px 10px;
+    border-radius: 4px;
 }
 img.mcustomc-cursor-pointer{
     height: 200px !important;

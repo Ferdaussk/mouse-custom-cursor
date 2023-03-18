@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Mouse Custom Cursor\n"
-"POT-Creation-Date: 2023-03-16 16:04+0600\n"
-"PO-Revision-Date: 2023-03-16 16:04+0600\n"
+"POT-Creation-Date: 2023-03-18 11:47+0600\n"
+"PO-Revision-Date: 2023-03-18 11:47+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,94 +21,95 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: mcustomc_plugin_boots.php:48
-msgid "SK Mouse Custom Cursor"
+#. Plugin Name of the plugin/theme
+#: mcustomc_plugin_boots.php:53 mouse-custom-cursor.php:65
+#: mouse-custom-cursor.php:80
+msgid "Mouse Custom Cursor"
 msgstr ""
 
-#: mcustomc_plugin_boots.php:57
+#: mcustomc_plugin_boots.php:62
 msgid "Custom Cursor"
 msgstr ""
 
-#: mcustomc_plugin_boots.php:60
+#: mcustomc_plugin_boots.php:65
 msgid "Yes"
 msgstr ""
 
-#: mcustomc_plugin_boots.php:61
+#: mcustomc_plugin_boots.php:66
 msgid "No"
 msgstr ""
 
-#: mcustomc_plugin_boots.php:71
+#: mcustomc_plugin_boots.php:76
 msgid "Apply On"
 msgstr ""
 
-#: mcustomc_plugin_boots.php:76
+#: mcustomc_plugin_boots.php:81
 msgid "Element Class/ID"
 msgstr ""
 
-#: mcustomc_plugin_boots.php:88
+#: mcustomc_plugin_boots.php:93
 msgid "CSS Selector"
 msgstr ""
 
-#: mcustomc_plugin_boots.php:101
+#: mcustomc_plugin_boots.php:106
 msgid "Cursor Type"
 msgstr ""
 
-#: mcustomc_plugin_boots.php:105
+#: mcustomc_plugin_boots.php:110
 msgid "Text Type"
 msgstr ""
 
-#: mcustomc_plugin_boots.php:106
+#: mcustomc_plugin_boots.php:111
 msgid "Image Type"
 msgstr ""
 
-#: mcustomc_plugin_boots.php:107
-msgid "Try Next"
-msgstr ""
-
-#: mcustomc_plugin_boots.php:119
-msgid "Choose Cursor Icon"
-msgstr ""
-
-#: mcustomc_plugin_boots.php:132 mcustomc_plugin_boots.php:144
-msgid "Cursor Text"
-msgstr ""
-
-#: mcustomc_plugin_boots.php:157
+#: mcustomc_plugin_boots.php:112 mcustomc_plugin_boots.php:150
 msgid "Cursor Icon"
 msgstr ""
 
-#: mcustomc_plugin_boots.php:174
+#: mcustomc_plugin_boots.php:124
+msgid "Choose Cursor Image/Icon"
+msgstr ""
+
+#: mcustomc_plugin_boots.php:137
+msgid "Cursor Text"
+msgstr ""
+
+#: mcustomc_plugin_boots.php:139
+msgid "Cursor"
+msgstr ""
+
+#: mcustomc_plugin_boots.php:153
+msgid "Note:- Use icon name only. (fas fa-hand-point-up)"
+msgstr ""
+
+#: mcustomc_plugin_boots.php:166
 msgid "Typography"
 msgstr ""
 
-#: mcustomc_plugin_boots.php:186
+#: mcustomc_plugin_boots.php:178
 msgid "Color"
 msgstr ""
 
-#: mcustomc_plugin_boots.php:203
+#: mcustomc_plugin_boots.php:195
 msgid "Background"
 msgstr ""
 
-#: mcustomc_plugin_boots.php:218
+#: mcustomc_plugin_boots.php:210
 msgid "Border"
 msgstr ""
 
-#: mcustomc_plugin_boots.php:232
+#: mcustomc_plugin_boots.php:224
 msgid "Border Radius"
 msgstr ""
 
-#: mcustomc_plugin_boots.php:248
+#: mcustomc_plugin_boots.php:240
 msgid "Padding"
 msgstr ""
 
 #: mouse-custom-cursor.php:64 mouse-custom-cursor.php:79
 #, php-format
 msgid "\"%1$s\" requires \"%2$s\" version %3$s or greater."
-msgstr ""
-
-#. Plugin Name of the plugin/theme
-#: mouse-custom-cursor.php:65 mouse-custom-cursor.php:80
-msgid "Mouse Custom Cursor"
 msgstr ""
 
 #: mouse-custom-cursor.php:66

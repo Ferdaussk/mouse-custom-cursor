@@ -8,6 +8,7 @@ use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Typography;
 use Elementor\Core\Schemes\Typography as Scheme_Typography;
+define( "MCUSTOMC_ASFSK_ASSETS_ADMIN_DIR_FILE", plugin_dir_url( __FILE__ ) . "assets/admin" );
 class MouseCustomCursor {
 
 	private static $_instance = null;
@@ -35,17 +36,21 @@ class MouseCustomCursor {
 		wp_enqueue_script( 'mcustomc-customcursors-the-cursor', plugin_dir_url( __FILE__ ) . 'assets/public/js/mcustomc-custom-cursor.js', array('jquery'), '1.0', true );
 	}
 	public function mcustomc_all_assets_for_elementor_editor_admin(){
-		wp_enqueue_style( 'mcustomc-customcursors-style-8cursor-edit', plugin_dir_url( __FILE__ ) . 'assets/public/css/frontend.css', null, '1.0', 'all' );
-		wp_enqueue_script( 'mcustomc-customcursors-the-cursor-edit', plugin_dir_url( __FILE__ ) . 'assets/public/js/mcustomc-custom-cursor.js', array('jquery'), '1.0', true );
+		$all_css_js_file = array(
+			'mcustomc-products-admin-icon' => array('mcustomc_path_admin_define'=>MCUSTOMC_ASFSK_ASSETS_ADMIN_DIR_FILE . '/icon.css'),
+		);
+		foreach($all_css_js_file as $handle => $fileinfo){
+			wp_enqueue_style( $handle, $fileinfo['mcustomc_path_admin_define'], null, '1.0', 'all');
+		}
 	}
 
-	public function ferdaussk_try_tomake_cursore($section, $section_id){
+	public function mcustomc_its_after_section($section, $section_id){
 		if ( 'section_advanced' === $section_id || '_section_style' === $section_id ) {
 
 			$section->start_controls_section(
-				'my_custom_control_section',
+				'mcustomc_control_section',
 				[
-					'label' => __( 'SK Mouse Custom Cursor', 'mouse-custom-cursor' ),
+					'label' => esc_html__( 'Mouse Custom Cursor', 'mouse-custom-cursor' ),
 					'tab' => \Elementor\Controls_Manager::TAB_ADVANCED,
 				]
 			);
@@ -54,11 +59,11 @@ class MouseCustomCursor {
 			$section->add_control(
 				'mcustomc_custom_cursor_enable',
 				array(
-					'label'        => __( 'Custom Cursor', 'mouse-custom-cursor' ),
+					'label'        => esc_html__( 'Custom Cursor', 'mouse-custom-cursor' ),
 					'type'         => Controls_Manager::SWITCHER,
 					'default'      => '',
-					'label_on'     => __( 'Yes', 'mouse-custom-cursor' ),
-					'label_off'    => __( 'No', 'mouse-custom-cursor' ),
+					'label_on'     => esc_html__( 'Yes', 'mouse-custom-cursor' ),
+					'label_off'    => esc_html__( 'No', 'mouse-custom-cursor' ),
 					'return_value' => 'yes',
 					'separator'    => 'before',
 					'frontend_available' => true,
@@ -68,12 +73,12 @@ class MouseCustomCursor {
 			$section->add_control(
 				'mcustomc_custom_cursor_target',
 				array(
-					'label'     => __( 'Apply On', 'mouse-custom-cursor' ),
+					'label'     => esc_html__( 'Apply On', 'mouse-custom-cursor' ),
 					'type'      => Controls_Manager::SELECT,
 					'default'   => 'container',
 					'options'   => array(
 						'container'    => ucfirst( $element_type ),
-						'css-selector' => __( 'Element Class/ID', 'mouse-custom-cursor' ),
+						'css-selector' => esc_html__( 'Element Class/ID', 'mouse-custom-cursor' ),
 					),
 					'frontend_available' => true,
 					'condition' => array(
@@ -85,7 +90,7 @@ class MouseCustomCursor {
 			$section->add_control(
 				'mcustomc_custom_cursor_css_selector',
 				array(
-					'label'     => __( 'CSS Selector', 'mouse-custom-cursor' ),
+					'label'     => esc_html__( 'CSS Selector', 'mouse-custom-cursor' ),
 					'type'      => Controls_Manager::TEXT,
 					'frontend_available' => true,
 					'condition' => array(
@@ -98,13 +103,13 @@ class MouseCustomCursor {
 			$section->add_control(
 				'mcustomc_custom_cursor_type',
 				array(
-					'label'     => __( 'Cursor Type', 'mouse-custom-cursor' ),
+					'label'     => esc_html__( 'Cursor Type', 'mouse-custom-cursor' ),
 					'type'      => Controls_Manager::SELECT,
 					'default'   => 'follow-text',
 					'options'   => array(
-						'follow-text'  => __( 'Text Type', 'mouse-custom-cursor' ),
-						'follow-image' => __( 'Image Type', 'mouse-custom-cursor' ),
-						'ferduaussk_fer'  => __( 'Try Next', 'mouse-custom-cursor' ),
+						'follow-text'  => esc_html__( 'Text Type', 'mouse-custom-cursor' ),
+						'follow-image' => esc_html__( 'Image Type', 'mouse-custom-cursor' ),
+						'mcustomc_cursor_icon'  => esc_html__( 'Cursor Icon', 'mouse-custom-cursor' ),
 					),
 					'frontend_available' => true,
 					'condition' => array(
@@ -116,12 +121,12 @@ class MouseCustomCursor {
 			$section->add_control(
 				'mcustomc_custom_cursor_icon',
 				array(
-					'label'     => __( 'Choose Cursor Icon', 'mouse-custom-cursor' ),
+					'label'     => esc_html__( 'Choose Cursor Image/Icon', 'mouse-custom-cursor' ),
 					'type'      => Controls_Manager::MEDIA,
 					'frontend_available' => true,
 					'condition' => array(
 						'mcustomc_custom_cursor_enable' => 'yes',
-						'mcustomc_custom_cursor_type'   => [ 'follow-image' ],
+						'mcustomc_custom_cursor_type'   => 'follow-image',
 					),
 				)
 			);
@@ -129,8 +134,9 @@ class MouseCustomCursor {
 			$section->add_control(
 				'mcustomc_custom_cursor_text',
 				array(
-					'label'     => __( 'Cursor Text', 'mouse-custom-cursor' ),
+					'label'     => esc_html__( 'Cursor Text', 'mouse-custom-cursor' ),
 					'type'      => Controls_Manager::TEXT,
+					'default'		=> esc_html__('Cursor', 'mouse-custom-cursor'),
 					'frontend_available' => true,
 					'condition' => array(
 						'mcustomc_custom_cursor_enable' => 'yes',
@@ -141,41 +147,27 @@ class MouseCustomCursor {
 			$section->add_control(
 				'mcustomc_custom_cursor_text2',
 				array(
-					'label'     => __( 'Cursor Text', 'mouse-custom-cursor' ),
+					'label'     => esc_html__( 'Cursor Icon', 'mouse-custom-cursor' ),
 					'type'      => Controls_Manager::TEXT,
+					'default'		=> 'fas fa-hand-point-up',
+					'description' => esc_html__('Note:- Use icon name only. (fas fa-hand-point-up)', 'mouse-custom-cursor'),
 					'frontend_available' => true,
 					'condition' => array(
 						'mcustomc_custom_cursor_enable' => 'yes',
-						'mcustomc_custom_cursor_type'   => 'ferduaussk_fer',
+						'mcustomc_custom_cursor_type'   => 'mcustomc_cursor_icon',
 					),
 				)
-			);
-
-			$section->add_control(
-				'mcustomc_the_custom_cursor_icon',
-				[
-					'label' => __( 'Cursor Icon', 'mouse-custom-cursor' ),
-					'type' => Controls_Manager::ICONS,
-					'default' => [
-						'value' => 'fas fa-star',
-						'library' => 'solid',
-					],
-					'condition' => array(
-						'mcustomc_custom_cursor_enable' => 'yes',
-						'mcustomc_custom_cursor_type'   => 'ferduaussk_fer',
-					),
-				]
 			);
 	
 			$section->add_group_control(
 				Group_Control_Typography::get_type(),
 				array(
 					'name'      => 'mcustomc_custom_cursor_text_typography',
-					'label'     => __( 'Typography', 'mouse-custom-cursor' ),
+					'label'     => esc_html__( 'Typography', 'mouse-custom-cursor' ),
 					'selector'  => '{{WRAPPER}} .mcustomc-cursor-pointer-text',
 					'condition' => array(
 						'mcustomc_custom_cursor_enable' => 'yes',
-						'mcustomc_custom_cursor_type'   => 'follow-text',
+						'mcustomc_custom_cursor_type'   => ['follow-text', 'mcustomc_cursor_icon'],
 					),
 				)
 			);
@@ -183,7 +175,7 @@ class MouseCustomCursor {
 			$section->add_control(
 				'mcustomc_custom_cursor_text_color',
 				array(
-					'label'     => __( 'Color', 'mouse-custom-cursor' ),
+					'label'     => esc_html__( 'Color', 'mouse-custom-cursor' ),
 					'type'      => Controls_Manager::COLOR,
 					'default'   => '',
 					'selectors' => array(
@@ -191,7 +183,7 @@ class MouseCustomCursor {
 					),
 					'condition' => array(
 						'mcustomc_custom_cursor_enable' => 'yes',
-						'mcustomc_custom_cursor_type'   => 'follow-text',
+						'mcustomc_custom_cursor_type'   => ['follow-text', 'mcustomc_cursor_icon'],
 					),
 				)
 			);
@@ -200,13 +192,13 @@ class MouseCustomCursor {
 				Group_Control_Background::get_type(),
 				[
 					'name'      => 'mcustomc_custom_cursor_text_bg',
-					'label'     => __( 'Background', 'mouse-custom-cursor' ),
+					'label'     => esc_html__( 'Background', 'mouse-custom-cursor' ),
 					'types'     => [ 'classic', 'gradient' ],
 					'exclude'   => array( 'image' ),
 					'selector'  => '{{WRAPPER}} .mcustomc-cursor-pointer-text',
 					'condition' => array(
 						'mcustomc_custom_cursor_enable' => 'yes',
-						'mcustomc_custom_cursor_type'   => 'follow-text',
+						'mcustomc_custom_cursor_type'   => ['follow-text', 'mcustomc_cursor_icon'],
 					),
 				]
 			);
@@ -215,13 +207,13 @@ class MouseCustomCursor {
 				Group_Control_Border::get_type(),
 				array(
 					'name'        => 'mcustomc_custom_cursor_text_border',
-					'label'       => __( 'Border', 'mouse-custom-cursor' ),
+					'label'       => esc_html__( 'Border', 'mouse-custom-cursor' ),
 					'placeholder' => '1px',
 					'default'     => '1px',
 					'selector'    => '{{WRAPPER}} .mcustomc-cursor-pointer-text',
 					'condition'   => array(
 						'mcustomc_custom_cursor_enable' => 'yes',
-						'mcustomc_custom_cursor_type'   => 'follow-text',
+						'mcustomc_custom_cursor_type'   => ['follow-text', 'mcustomc_cursor_icon'],
 					),
 				)
 			);
@@ -229,7 +221,7 @@ class MouseCustomCursor {
 			$section->add_control(
 				'mcustomc_custom_cursor_text_border_radius',
 				array(
-					'label'      => __( 'Border Radius', 'mouse-custom-cursor' ),
+					'label'      => esc_html__( 'Border Radius', 'mouse-custom-cursor' ),
 					'type'       => Controls_Manager::DIMENSIONS,
 					'size_units' => array( 'px', '%' ),
 					'selectors'  => array(
@@ -237,7 +229,7 @@ class MouseCustomCursor {
 					),
 					'condition'  => array(
 						'mcustomc_custom_cursor_enable' => 'yes',
-						'mcustomc_custom_cursor_type'   => 'follow-text',
+						'mcustomc_custom_cursor_type'   => ['follow-text', 'mcustomc_cursor_icon'],
 					),
 				)
 			);
@@ -245,7 +237,7 @@ class MouseCustomCursor {
 			$section->add_responsive_control(
 				'mcustomc_custom_cursor_text_padding',
 				array(
-					'label'      => __( 'Padding', 'mouse-custom-cursor' ),
+					'label'      => esc_html__( 'Padding', 'mouse-custom-cursor' ),
 					'type'       => Controls_Manager::DIMENSIONS,
 					'size_units' => array( 'px', '%' ),
 					'selectors'  => array(
@@ -253,20 +245,18 @@ class MouseCustomCursor {
 					),
 					'condition'  => array(
 						'mcustomc_custom_cursor_enable' => 'yes',
-						'mcustomc_custom_cursor_type'   => 'follow-text',
+						'mcustomc_custom_cursor_type'   => ['follow-text', 'mcustomc_cursor_icon'],
 					),
 				)
 			);
 			$section->end_controls_section();
 		}
 	}
-	public function ferdaussk_try_to_render($section){
+	public function mcustomc_its_render($section){
 		$settings      = $section->get_settings_for_display();
-
 		$cursor_url    = $settings['mcustomc_custom_cursor_icon'];
 		$cursor_text   = $settings['mcustomc_custom_cursor_text'];
 		$cursor_text2   = $settings['mcustomc_custom_cursor_text2'];
-		// $cursor_icon   = $settings['mcustomc_the_custom_cursor_icon']['value'];
 		$cursor_target = $settings['mcustomc_custom_cursor_target'];
 		$css_selector  = $settings['mcustomc_custom_cursor_css_selector'];
 
@@ -292,10 +282,6 @@ class MouseCustomCursor {
 				$custom_cursor_options['text'] = $cursor_text2;
 			}
 
-			// if ( $cursor_icon ) {
-			// 	$custom_cursor_options['url'] = $cursor_icon;
-			// }
-
 			if ( 'css-selector' === $cursor_target && $css_selector ) {
 				$custom_cursor_options['target'] = 'selector';
 				$custom_cursor_options['css_selector'] = $css_selector;
@@ -311,17 +297,10 @@ class MouseCustomCursor {
 	}
 
 	public function __construct() {
-
 		// This is for register the controls
-		add_action( 'elementor/element/after_section_end', [$this, 'ferdaussk_try_tomake_cursore'], 10, 2 );
+		add_action( 'elementor/element/after_section_end', [$this, 'mcustomc_its_after_section'], 10, 2 );
 		// Render this controls
-		add_action( 'elementor/frontend/before_render', [$this, 'ferdaussk_try_to_render'], 10, 2 );
-
-
-
-
-
-
+		add_action( 'elementor/frontend/before_render', [$this, 'mcustomc_its_render'], 10, 2 );
 		// For public assets
 		add_action('wp_enqueue_scripts', [$this, 'mcustomc_all_assets_for_the_public']);
 		// For Elementor Editor

@@ -29,7 +29,6 @@
 			cursorText           = elementSettings.mcustomc_custom_cursor_text,
 			cursorText2          = elementSettings.mcustomc_custom_cursor_text2,
 			cursorTarget         = elementSettings.mcustomc_custom_cursor_target;
-			var hkshdksd = 'Name Ferdaus';
 		if ( 'yes' === custom_cursor_enable ) {
 			var selector  = ".elementor-element-" + columnId,
 				$selector = $(".elementor-element-" + columnId);
@@ -73,8 +72,7 @@
 				}).mouseleave(function() {
 					$scope.removeClass( "mcustomc-cursor-active" );
 				});
-			} else if('ferduaussk_fer' === cursorType){
-				var name_ferdaus = '<i class="fa fa-home"></i>';
+			} else if('mcustomc_cursor_icon' === cursorType){
 				$("#style-" + columnId).remove();
 				$scope.append('<div class="mcustomc-cursor-pointer mcustomc-cursor-pointer-text"><i class="' + cursorText2 + '"></i></div>');
 				$selector.mouseenter(function() {

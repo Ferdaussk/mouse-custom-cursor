@@ -1,0 +1,12 @@
+.elementor-control-mcustomc_control_section::after {
+  content: 'bwd' !important;
+  position: absolute !important;
+  right: 35px;
+  top: 12px;
+  color: #fffefe;
+  font-family: initial;
+  background: linear-gradient(90deg, #03a9f4, #f441a5);
+  border-radius: 3px;
+  font-size: 11px;
+  padding: 2px 5px;
+  }

@@ -13,7 +13,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 require_once ( plugin_dir_path(__FILE__) ) . '/includes/requires-check.php';
-final class The_Best_Testimonials{
+final class ValidCursor{
 
 	const VERSION = '1.0';
 
@@ -87,5 +87,5 @@ final class The_Best_Testimonials{
 }
 
 // Instantiate mouse-custom-cursor.
-new The_Best_Testimonials();
+new ValidCursor();
 remove_action( 'shutdown', 'wp_ob_end_flush_all', 1 );
