@@ -52,7 +52,7 @@ final class ValidCursor{
 		}
 
 		// Once we get here, We have passed all validation checks so we can safely include our plugin
-		require_once( 'mcustomc_plugin_boots.php' );
+		require_once( 'mcustomc_plugin_ready.php' );
 	}
 
 	public function mcustomc_admin_notice_minimum_elementor_version() {
