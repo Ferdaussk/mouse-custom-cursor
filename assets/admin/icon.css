@@ -9,4 +9,10 @@
   border-radius: 3px;
   font-size: 11px;
   padding: 2px 5px;
-  }
+}
+.elementor-control-mcustomc_control_section .elementor-panel-heading-title, .elementor-control-mcustomc_control_section .elementor-panel-heading-toggle i {
+  background: linear-gradient(90deg, #f441a5, #03a9f4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
