@@ -123,6 +123,9 @@ class MouseCustomCursor {
 				array(
 					'label'     => esc_html__( 'Choose Cursor Image/Icon', 'mouse-custom-cursor' ),
 					'type'      => Controls_Manager::MEDIA,
+					'default' => [
+						'url' => 'https://placehold.it/200x200',
+					],
 					'frontend_available' => true,
 					'condition' => array(
 						'mcustomc_custom_cursor_enable' => 'yes',
@@ -150,7 +153,7 @@ class MouseCustomCursor {
 					'label'     => esc_html__( 'Cursor Icon', 'mouse-custom-cursor' ),
 					'type'      => Controls_Manager::TEXT,
 					'default'		=> 'fas fa-hand-point-up',
-					'description' => esc_html__('Note:- Use icon name only. (fas fa-hand-point-up)', 'mouse-custom-cursor'),
+					'description' => '<b>Note:-</b> Use <a href="https://fontawesome.com/icons" target="_blank">fontawesome</a> icon name only. (fas fa-hand-point-up)',
 					'frontend_available' => true,
 					'condition' => array(
 						'mcustomc_custom_cursor_enable' => 'yes',
