@@ -69,7 +69,6 @@ class MouseCustomCursor {
 					'frontend_available' => true,
 				)
 			);
-	
 			$section->add_control(
 				'mcustomc_custom_cursor_target',
 				array(
@@ -110,6 +109,7 @@ class MouseCustomCursor {
 						'follow-text'  => esc_html__( 'Text Type', 'mouse-custom-cursor' ),
 						'follow-image' => esc_html__( 'Image Type', 'mouse-custom-cursor' ),
 						'mcustomc_cursor_icon'  => esc_html__( 'Cursor Icon', 'mouse-custom-cursor' ),
+						'img-coursor'  => esc_html__( 'Image Cursor', 'mouse-custom-cursor' ),
 					),
 					'frontend_available' => true,
 					'condition' => array(
@@ -129,8 +129,9 @@ class MouseCustomCursor {
 					'frontend_available' => true,
 					'condition' => array(
 						'mcustomc_custom_cursor_enable' => 'yes',
-						'mcustomc_custom_cursor_type'   => 'follow-image',
+						'mcustomc_custom_cursor_type'   => ['img-coursor', 'follow-image'],
 					),
+					'description' => esc_html__('Make sure, When you select "Image Cursor" then the image size should be maximum width:120px', 'mouse-custom-cursor')
 				)
 			);
 	
@@ -262,7 +263,6 @@ class MouseCustomCursor {
 		$cursor_text2   = $settings['mcustomc_custom_cursor_text2'];
 		$cursor_target = $settings['mcustomc_custom_cursor_target'];
 		$css_selector  = $settings['mcustomc_custom_cursor_css_selector'];
-
 		if ( 'yes' === $settings['mcustomc_custom_cursor_enable'] ) {
 			if ( ! \Elementor\Plugin::$instance->editor->is_edit_mode() || ! \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
 				wp_enqueue_script( 'powerpack-frontend' );

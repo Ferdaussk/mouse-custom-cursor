@@ -21,3 +21,9 @@ div[class^="pa-"] {
 img.mcustomc-cursor-pointer{
     height: 200px !important;
 }
+
+
+/* .mcustomc-img-cursor:active + .elementor-widget-container{ */
+/* .elementor-element:has(.mcustomc-img-cursor) .elementor-widget-container{
+    cursor: url('http://localhost/ferdaussk/wp-content/uploads/2023/03/ferdaussk.png'), auto;
+} */
